@@ -45,6 +45,7 @@ p {
     display: flex;
     align-items: center;
     padding: 1.5em;
+    /* overflow-x: hidden; */
 }
 
 .hamburger {
@@ -55,23 +56,59 @@ p {
     z-index: 10;
 }
 
-.hamburger-line {
+.line {
     height: 2px;
     background: black;
     display: block;
     margin: 5px auto;
+    transition: all .2s ease;
+}
+
+.hamburger.active .line:nth-child(2) {
+    display: none;
+}
+
+.hamburger.active .line:first-child {
+    transform: translateY(4px) rotate(45deg);
+}
+
+.hamburger.active .line:last-child {
+    transform: translateY(-4px) rotate(-45deg);
 }
 
 .nav {
     /* While making the hamburger */
-    display: none;
+    /* display: none; */
     font-size: 1.125rem;
     position: absolute;
-    right: 0;
     top: 0;
+    right: 0;
     height: 100vh;
-    background: lightblue;
-    padding: 4em 1em;
+    background: rgb(246, 250, 252);
+    padding: 4em 0;
+    width: 0;
+    overflow-x: hidden;
+    transition: all .2s ease;
+
+    /* transform: translateX(100%); */
+    
+}
+
+body.nav-open body::after {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    right: 0;
+    background: gray;
+    filter: opacity(.5);
+}
+
+body.nav-open .nav {
+    width: 240px;
+    padding: 4em 1.5em;
 }
 
 .nav__list {
@@ -79,17 +116,60 @@ p {
     padding-inline-start: 0;
 }
 
-.nav__item {
+.nav__list--secondary {
+    margin-top: 2em;
+}
 
+.nav__item {
+    margin-bottom: 1em;
 }
 
 .nav__link {
+    display: block;
     text-decoration: none;
     color: hsl(0, 0%, 41%)
 }
 
-.arrow-down {
+.nav__list--secondary .nav__link {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.nav__link--button {
+    border: 1px solid hsl(0, 0%, 41%);
+    border-radius: 10px;
+    display: block;
+    padding: .4em 0;
+
+}
+
+.nav__sub-menu {
+    display: none;
+    list-style-type: none;
+    padding-inline-start: 1em;
+    margin: 1em 0;
+    transition: display 5s ease-in;
+}
+
+.nav__item.active .nav__sub-menu {
+    display: block;
+}
+
+.nav__sub-menu img {
+    margin-right: .6em;
+}
+
+.nav__sub-menu li {
+    color:hsl(0, 0%, 41%);
+    margin-bottom: .8em;
+}
+
+.arrow-icon {
     content: url(images/icon-arrow-down.svg);
+}
+
+.nav__item.active .arrow-icon {
+    content: url(images/icon-arrow-up.svg);
 }
 
 .hero__img--desktop {

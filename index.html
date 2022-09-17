@@ -15,14 +15,29 @@
   <header class="header">
     <img src="images/logo.svg" alt="Snap logo" class="header__logo">
     <div class="hamburger">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
     </div>
     <nav class="nav">
       <ul class="nav__list nav__list--primary">
-        <li class="nav__item"><a href="#" class="nav__link">Features <i class="arrow-down"></i></a></li>
-        <li class="nav__item"><a href="#" class="nav__link">Company <i class="arrow-down"></i></a></li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Features <i class="arrow-icon"></i></a>
+          <!-- Add nav__links to submenu items -->
+          <ul class="nav__sub-menu">
+            <li><img src="images/icon-todo.svg"> Todo List</li>
+            <li><img src="images/icon-calendar.svg"> Calendar</li>
+            <li><img src="images/icon-reminders.svg"> Reminders</li>
+            <li><img src="images/icon-planning.svg"> Planning</li>
+          </ul>
+        </li>
+        <li class="nav__item"><a href="#" class="nav__link">Company <i class="arrow-icon"></i></a>
+          <ul class="nav__sub-menu">
+            <li>History</li>
+            <li>Our Team</li>
+            <li>Blog</li>
+          </ul>
+        </li>
         <li class="nav__item"><a href="#" class="nav__link">Careers</a></li>
         <li class="nav__item"><a href="#" class="nav__link">About</a></li>
       </ul>
@@ -51,5 +66,7 @@
       </div>
     </div>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
