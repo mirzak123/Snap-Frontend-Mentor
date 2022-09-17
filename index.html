@@ -5,34 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="header">
     <img src="images/logo.svg" alt="Snap logo" class="header__logo">
+    <div class="hamburger">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </div>
     <nav class="nav">
-      <ul>
-
+      <ul class="nav__list nav__list--primary">
+        <li class="nav__item"><a href="#" class="nav__link">Features <i class="arrow-down"></i></a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Company <i class="arrow-down"></i></a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Careers</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+      </ul>
+      <ul class="nav__list nav__list--secondary">
+        <li class="nav__item"><a href="#" class="nav__link">Login</a></li>
+        <li class="nav__item"><a href="#" class="nav__link nav__link--button">Register</a></li>
       </ul>
     </nav>
   </header>  
-  <main class="main">
+  <main class="main container">
     <div class="hero">
-      <div class="hero__text">
+      <div class="hero__img-container">
+        <img src="images/image-hero-desktop.png" alt="Geometric shapes and a man holding a laptop" class="hero__img--desktop">
+        <img src="images/image-hero-mobile.png" alt="Geometric shapes and a man holding a laptop" class="hero__img--mobile">
+      </div>
+      <div class="hero__content">
         <h1 class="hero__title">Make remote work</h1>
         <p class="hero__description">Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
-        <button class="btn btn--dark">Learn more</button>
+        <button class="btn">Learn more</button>
         <div class="hero__client-logos">
-          <img src="images/client-databiz.svg" alt="Databiz client logo">
-          <img src="images/client-audiophile.svg" alt="Audiophile client logo">
-          <img src="images/client-meet.svg" alt="Meet client logo">
-          <img src="images/client-maker.svg" alt="Maker client logo">
+          <img class="client-logo" src="images/client-databiz.svg" alt="Databiz client logo">
+          <img class="client-logo" src="images/client-audiophile.svg" alt="Audiophile client logo">
+          <img class="client-logo" src="images/client-meet.svg" alt="Meet client logo">
+          <img class="client-logo" src="images/client-maker.svg" alt="Maker client logo">
         </div>
-      </div>
-      <div class="hero__img-container">
-        <img src="images/image-hero-desktop.png" alt="Geometric shapes and a man holding a laptop" class=".hero__img--desktop">
-        <img src="images/image-hero-mobile.png" alt="Geometric shapes and a man holding a laptop" class=".hero__img--desktop">
       </div>
     </div>
   </main>
