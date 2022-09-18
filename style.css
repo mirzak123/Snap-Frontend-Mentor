@@ -41,11 +41,9 @@ p {
 }
 
 .header {
-    position: relative;
     display: flex;
     align-items: center;
     padding: 1.5em;
-    /* overflow-x: hidden; */
 }
 
 .hamburger {
@@ -77,10 +75,8 @@ p {
 }
 
 .nav {
-    /* While making the hamburger */
-    /* display: none; */
     font-size: 1.125rem;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
@@ -89,26 +85,12 @@ p {
     width: 0;
     overflow-x: hidden;
     transition: all .2s ease;
-
-    /* transform: translateX(100%); */
-    
-}
-
-body.nav-open body::after {
-    display: block;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    right: 0;
-    background: gray;
-    filter: opacity(.5);
 }
 
 body.nav-open .nav {
     width: 240px;
     padding: 4em 1.5em;
+    box-shadow: -100vw 0 0 100vw rgba(0,0,0,.5);
 }
 
 .nav__list {
@@ -172,6 +154,15 @@ body.nav-open .nav {
     content: url(images/icon-arrow-up.svg);
 }
 
+.hero__img-container {
+
+}
+
+.hero__img {
+    display: block;
+    margin: 0 auto;
+}
+
 .hero__img--desktop {
     display: none;
 }
@@ -200,4 +191,55 @@ body.nav-open .nav {
 
 .client-logo {
     width: 20%;
+}
+
+@media screen and (min-width: 900px) {
+    .header {
+        padding: 1.5em 2.5em;
+        gap: 40px;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .nav {
+        position: static;
+        display: flex;
+        width: auto;
+        height: auto;
+        padding: 0;
+        
+        /* because of "display: flex" on the header */
+        flex: 1;
+    }
+
+    .nav__list {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .nav__list--secondary {
+        margin: 0 0 0 auto;
+    }
+
+    .nav__item {
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav__link {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav__link--button {
+        padding: .5em .8em;
+    }
+
+    .nav__sub-menu {
+        position: absolute;
+        z-index: 10;
+    }
 }
