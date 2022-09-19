@@ -201,9 +201,14 @@ body.nav-open .nav {
 }
 
 @media screen and (min-width: 900px) {
+    .container {
+        width: 80%;
+    }
+
     .header {
         padding: 1.5em 2.5em;
         gap: 40px;
+        position: relative;
     }
 
     .hamburger {
@@ -214,7 +219,7 @@ body.nav-open .nav {
         position: static;
         display: flex;
         width: auto;
-        height: auto;
+        height:max-content;
         padding: 0;
         
         /* because of "display: flex" on the header */
@@ -259,6 +264,10 @@ body.nav-open .nav {
         padding: 1em;
         border-radius: 10px;
         box-shadow: 0 5px 35px -5px rgb(194, 194, 194);
+    }
+
+    #features-sub-menu {
+        left: 100px;
     }
 
     .hero {
