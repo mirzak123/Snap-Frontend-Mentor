@@ -1,7 +1,6 @@
 const navItems = document.querySelectorAll('.nav__list--primary .nav__item');
 const hamburger = document.querySelector('.hamburger');
 
-
 function toggleActive () {
     this.classList.toggle('active');
 }
